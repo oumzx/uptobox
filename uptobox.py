@@ -79,7 +79,7 @@ class Uptobox(object):
             answer = input("Y for yes, everything else to quit: ")
             if answer.upper() == "Y":
                 _countdown(waiting_time)
-                request = requests.get(f"{self.api_url}/link?token={self.token}&file_code={code}&waiting_token={waiting_token}").text
+                request = requests.get(f"{self.api_url}/link?token={self.token}&file_code={code}&waitingToken={waiting_token}").text
                 info = json.loads(request)
                 download_link = info["data"]["dlLink"]
             else:
