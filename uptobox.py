@@ -74,7 +74,7 @@ class Uptobox(object):
             request = requests.get(f"{self.api_url}/link?token={self.token}&file_code={code}").text
             info = json.loads(request)
             waiting_time = info["data"]["waiting"] + 1
-            waiting_token = info["data"]["waiting_token"]
+            waiting_token = info["data"]["waitingToken"]
             print(f"[Uptobox] You have to wait {waiting_time} seconds to generate a new link.\n[Uptobox] Do you want to wait ?")
             answer = input("Y for yes, everything else to quit: ")
             if answer.upper() == "Y":
